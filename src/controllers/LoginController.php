@@ -26,7 +26,6 @@ session_start();
 			$password = $_POST["password"];
 
 			echo "Session iniciada $user $password";
-
 		} else if (!empty($_POST["login"])) {
 			echo "Someting went wrong";
 		}
