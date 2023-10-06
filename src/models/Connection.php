@@ -1,30 +1,34 @@
 <?php
-class Connection {
-	private $host;
-	private $username;
-	private $password;
-	private $database;
-	private $conn;
 
-	public function __construct() {
-		
+class Connection
+{
+    private $host;
+    private $username;
+    private $password;
+    private $database;
+    private $conn;
 
-		$this->host= getenv("HOST");
-		$this->username = getenv("USERNAME");
-		$this-> password = getenv("PASSWORD");
-		$this->database = getenv("DATABASE");
+    public function __construct()
+    {
 
-		$connection_string = "mysql:host=$this->host;dbname=$this->database;charset=utf8";
 
-		try {
-			$this->conn = new PDO($connection_string, $this->username, $this->password);
-			$this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		} catch (Exception $e) {
-			echo "error";
-		}
-	}
+        $this->host = getenv("HOST");
+        $this->username = getenv("USERNAME");
+        $this-> password = getenv("PASSWORD");
+        $this->database = getenv("DATABASE");
 
-	public function getConnection() {
-		return $this->conn;
-	}
+        $connection_string = "mysql:host=$this->host;dbname=$this->database;charset=utf8";
+
+        try {
+            $this->conn = new PDO($connection_string, $this->username, $this->password);
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (Exception $e) {
+            echo "error";
+        }
+    }
+
+    public function getConnection()
+    {
+        return $this->conn;
+    }
 }

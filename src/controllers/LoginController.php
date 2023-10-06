@@ -22,31 +22,29 @@ require_once("../models/UserModel.php");
 		<?php
 
 
-		if (isset($_POST["login"])) {
-			$user = $_POST["username"];
-			$password = $_POST["password"];
+        if (isset($_POST["login"])) {
+            $user = $_POST["username"];
+            $password = $_POST["password"];
 
-			$user_model = new UserModel();
-			$re = $user_model->login($user);
+            $user_model = new UserModel();
+            $re = $user_model->login($user);
 
-			if (!$re) {
-				echo "User not found";
-			}
+            if (!$re) {
+                echo "User not found";
+            } elseif(password_verify($password, $re["contrasenia"])) {
 
-			else if(password_verify($password, $re["contrasenia"])) {
+                $_SESSION["user"] = $user;
+                $_SESSION["password"] = $password;
 
-				$_SESSION["user"] = $user;
-				$_SESSION["password"] = $password;
+                echo "Session iniciada" . $_SESSION["user"] . $_SESSION["password"];
+            } else {
+                echo "User wrong";
+            }
+        } elseif (!empty($_POST["login"])) {
+            echo "Someting went wrong";
+        }
 
-				echo "Session iniciada" . $_SESSION["user"] . $_SESSION["password"];
-			} else {
-				echo "User wrong";
-			}
-		} else if (!empty($_POST["login"])) {
-			echo "Someting went wrong";
-		}
-
-		?>
+?>
 </body>
 
 
