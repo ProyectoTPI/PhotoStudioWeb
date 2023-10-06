@@ -7,8 +7,8 @@
 
 // Define the root route
 // $router->get('/', function () {
-    // Load the home view
-    // require __DIR__ . '/../src/views/home.php';
+// Load the home view
+// require __DIR__ . '/../src/views/home.php';
 // });
 
 // Run the router
