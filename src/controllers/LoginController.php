@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once("../models/UserModel.php");
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +26,22 @@ session_start();
 			$user = $_POST["username"];
 			$password = $_POST["password"];
 
-			echo "Session iniciada $user $password";
+			$user_model = new UserModel();
+			$re = $user_model->login($user);
+
+			if (!$re) {
+				echo "User not found";
+			}
+
+			else if(password_verify($password, $re["contrasenia"])) {
+
+				$_SESSION["user"] = $user;
+				$_SESSION["password"] = $password;
+
+				echo "Session iniciada" . $_SESSION["user"] . $_SESSION["password"];
+			} else {
+				echo "User wrong";
+			}
 		} else if (!empty($_POST["login"])) {
 			echo "Someting went wrong";
 		}
