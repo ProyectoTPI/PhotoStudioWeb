@@ -31,14 +31,12 @@ require_once("../models/UserModel.php");
 
 			if (!$re) {
 				echo "User not found";
-			}
-
-			else if(password_verify($password, $re["contrasenia"])) {
+			} else if (password_verify($password, $re["contrasenia"])) {
 
 				$_SESSION["user"] = $user;
 				$_SESSION["password"] = $password;
 
-				echo "Session iniciada" . $_SESSION["user"] . $_SESSION["password"];
+				echo "Session iniciada";
 			} else {
 				echo "User wrong";
 			}
