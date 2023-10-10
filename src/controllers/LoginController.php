@@ -29,20 +29,20 @@ require_once("../models/UserModel.php");
             $user_model = new UserModel();
             $re = $user_model->login($user);
 
-            if (!$re) {
-                echo "User not found";
-            } elseif(password_verify($password, $re["contrasenia"])) {
+			if (!$re) {
+				echo "User not found";
+			} else if (password_verify($password, $re["contrasenia"])) {
 
                 $_SESSION["user"] = $user;
                 $_SESSION["password"] = $password;
 
-                echo "Session iniciada" . $_SESSION["user"] . $_SESSION["password"];
-            } else {
-                echo "User wrong";
-            }
-        } elseif (!empty($_POST["login"])) {
-            echo "Someting went wrong";
-        }
+				echo "Session iniciada";
+			} else {
+				echo "User wrong";
+			}
+		} else if (!empty($_POST["login"])) {
+			echo "Someting went wrong";
+		}
 
 ?>
 </body>

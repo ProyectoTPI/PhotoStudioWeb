@@ -1,6 +1,5 @@
 <?php
-
-require_once("Connection.php");
+require_once("../config/Connection.php");
 
 class UserModel extends Connection
 {
