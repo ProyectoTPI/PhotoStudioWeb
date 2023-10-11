@@ -23,5 +23,6 @@
 </head>
 <body>
     <a href="src/controllers/LoginController.php">Login form</a> 
+    <a href="src/views/card.php">Card</a> 
 </body>
 </html>
