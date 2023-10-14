@@ -59,7 +59,6 @@
         }).render('#paypal-button-container');
     </script>
 
-
 </body>
 
 </html>
