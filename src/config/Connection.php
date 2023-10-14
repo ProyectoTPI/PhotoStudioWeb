@@ -1,5 +1,13 @@
 <?php
 
+$envFilePath = '/workspaces/photo/.env';
+if (file_exists($envFilePath)) {
+    $envVars = parse_ini_file($envFilePath);
+    foreach ($envVars as $key => $value) {
+        putenv("$key=$value");
+    }
+}
+
 class Connection
 {
     private $host;
