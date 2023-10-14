@@ -20,14 +20,21 @@
     <h1> Price </h1>
         <p id="package-price">10.50</p>
 
-    <form id="paypal-form" action="#" method="post">
+    <form id="paypal-form" action="src/controllers/PaypalController.php" method="post">
         <input type="hidden" name="package" id="package-input" value="">
         <input type="hidden" name="price" id="price-input" value="">
     </form>
 
     <script src="https://www.paypal.com/sdk/js?client-id=AekIt_oBmEwI3_VpKUkZj1InGlqq8cWuGdRrfynoSqHCN_cO4G2zFoau4b_nyYpAkIVXFFlwvDTQ6rTX&currency=USD"></script>
-    <script src="app.js"></script>
     <script>
+        let form = document.getElementById("paypal-form");
+        let pkgName = document.getElementById("package-description").innerHTML;
+        let pkgPrice = document.getElementById("package-price").innerHTML;
+        console.log(pkgName)
+        console.log(pkgPrice)
+
+        let pkgNameInput = document.getElementById("package-input");
+        let pkgPriceInput = document.getElementById("price-input");
 
         paypal.Buttons({
             style: {
@@ -39,7 +46,7 @@
                 return actions.order.create({
                     purchase_units: [{
                         amount: {
-                            value: '100'
+                            value: '1'
                         }
                     }]
                 });
@@ -47,22 +54,14 @@
 
             onApprove: function(data, actions) {
                 return actions.order.capture().then(function (detalles) {
-                    let form = document.getElementById("paypal-form");
-                    let pkgName = document.getElementById("package-description").value;
-                    let pkgPrice = document.getElementById("package-price").value;
-
-                    let pkgNameInput = document.getElementById("package-input");
-                    let pkgPriceInput = document.getElementById("price-input");
 
                     let data = JSON.stringify(detalles)
                     pkgNameInput.value = pkgName;
                     pkgPriceInput.value = pkgPrice;
                     form.submit()
 
-                    console.log(pkgName)
-                    console.log(pkgPrice)
-                    console.log(data)
-                    console.log(detalles);
+                    // console.log(data)
+                    // console.log(detalles);
                     alert("Pago realizado");
                 });
             },
