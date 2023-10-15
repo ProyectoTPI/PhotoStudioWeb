@@ -18,7 +18,7 @@
         <p id="package-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, adipisci? Impedit nesciunt architecto molestiae ab, quos incidunt itaque. Necessitatibus, ea blanditiis voluptate velit beatae id officiis quia delectus eum odio!</p>
 
     <h1> Price </h1>
-        <p id="package-price">10.50</p>
+        <p id="package-price">1</p>
 
     <form id="paypal-form" action="src/controllers/PaypalController.php" method="post">
         <input type="hidden" name="package" id="package-input" value="">
@@ -46,7 +46,7 @@
                 return actions.order.create({
                     purchase_units: [{
                         amount: {
-                            value: '1'
+                            value: pkgPrice
                         }
                     }]
                 });
@@ -60,8 +60,6 @@
                     pkgPriceInput.value = pkgPrice;
                     form.submit()
 
-                    // console.log(data)
-                    // console.log(detalles);
                     alert("Pago realizado");
                 });
             },
