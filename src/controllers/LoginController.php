@@ -35,8 +35,10 @@ require_once("../models/UserModel.php");
 
                 $_SESSION["user"] = $user;
                 $_SESSION["password"] = $password;
+                $_SESSION["user_id"] = $re["usuario_id"];
 
-                echo "Session iniciada";
+
+                header("Location: ../../index.php");
             } else {
                 echo "User wrong";
             }
