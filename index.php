@@ -21,20 +21,25 @@
         <p id="package-price">1</p>
 
     <form id="paypal-form" action="src/controllers/PaypalController.php" method="post">
-        <input type="hidden" name="package" id="package-input" value="">
+        <input type="hidden" name="name" id="package-input" value="">
         <input type="hidden" name="price" id="price-input" value="">
+        <!-- <input type="hidden" name="concept" id="concept-input" value=""> -->
+        <input type="hidden" name="transaction" id="transaction-input" value="">
     </form>
 
     <script src="https://www.paypal.com/sdk/js?client-id=AekIt_oBmEwI3_VpKUkZj1InGlqq8cWuGdRrfynoSqHCN_cO4G2zFoau4b_nyYpAkIVXFFlwvDTQ6rTX&currency=USD"></script>
     <script>
+
+        // Form values injection
         let form = document.getElementById("paypal-form");
         let pkgName = document.getElementById("package-description").innerHTML;
         let pkgPrice = document.getElementById("package-price").innerHTML;
-        console.log(pkgName)
-        console.log(pkgPrice)
+        // let pkgConcept = document.getElementById("concept-price").innerHTML;
 
         let pkgNameInput = document.getElementById("package-input");
         let pkgPriceInput = document.getElementById("price-input");
+        // let pkgConceptInput = document.getElementById("concept-input");
+        let pkgTransactionInput = document.getElementById("transaction-input");
 
         paypal.Buttons({
             style: {
@@ -58,14 +63,15 @@
                     let data = JSON.stringify(detalles)
                     pkgNameInput.value = pkgName;
                     pkgPriceInput.value = pkgPrice;
+                    pkgTransactionInput.value = data;
                     form.submit()
 
                     alert("Pago realizado");
                 });
             },
-            onCancel: function(data) {
+            onCancel: function(detalles) {
                 alert("Pago cancelado");
-                console.log(data);
+                console.log(detalles);
             }
         }).render('#paypal-button-container');
     </script>
