@@ -35,7 +35,7 @@
               </div>
               
            
-              <form method="post" action="../controllers/UsrLoginController.php">
+              <form method="post" action="./../controllers/LoginController.php">
                                 
                   <div class="form-group row">
                         <label for="username" class="col-xl-2 col-form-label">Nombre de usuario</label>
@@ -51,7 +51,7 @@
                   </div>
                   <div class="row d-flex justify-content-center form-margint">
                         <div class="col-xl-3">
-                          <input class="btn btn-lg btn-primary" type="submit" name="login" value="Iniciar Sesión">
+                          <input class="btn btn-lg btn-primary" type="submit" name="login" value="Login">
                         </div>
                   </div>
 
