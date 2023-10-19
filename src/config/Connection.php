@@ -18,10 +18,12 @@ class Connection
 
     public function __construct()
     {
+        
         $this->host = getenv("HOST");
         $this->username = getenv("USERNAME");
         $this->password = getenv("PASSWORD");
         $this->database = getenv("DATABASE");
+        
 
         $connection_string = "mysql:host=$this->host;dbname=$this->database;charset=utf8";
 
