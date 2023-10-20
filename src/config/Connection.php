@@ -18,20 +18,18 @@ class Connection
 
     public function __construct()
     {
-        
         $this->host = getenv("HOST");
         $this->username = getenv("USERNAME");
         $this->password = getenv("PASSWORD");
         $this->database = getenv("DATABASE");
-        
 
         $connection_string = "mysql:host=$this->host;dbname=$this->database;charset=utf8";
-
         try {
             $this->conn = new PDO($connection_string, $this->username, $this->password);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch (Exception $e) {
-            echo "error";
+        } catch (PDOException $e) {
+            echo "Error de conexión a la base de datos: " . $e->getMessage();
+            die();
         }
     }
 
@@ -40,3 +38,9 @@ class Connection
         return $this->conn;
     }
 }
+
+
+
+
+
+
