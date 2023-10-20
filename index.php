@@ -20,7 +20,7 @@
     <h1> Price </h1>
         <p id="package-price">1</p>
 
-    <form id="paypal-form" action="src/controllers/PaypalController.php" method="post">
+    <form id="paypal-form" action="src/controllers/TransactionController.php" method="post">
         <input type="hidden" name="name" id="package-input" value="">
         <input type="hidden" name="price" id="price-input" value="">
         <input type="hidden" name="transaction" id="transaction-input" value="">
