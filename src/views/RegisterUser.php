@@ -36,9 +36,14 @@
                     <label for="username">Nombre de usuario</label>
                     <input type="text" class="form-control" name="username" id="username"
                       placeholder="Ingrese el nombre usuario" Required>
-                    <small id="usernameHelp" class="form-text text-muted">Algunos ejemplos son: Juan Castillo, Alex
-                      Roldan.</small>
+                    <small id="usernameHelp" class="form-text text-muted">Algunos ejemplos son: Juan, Alex, Pedro, etc.</small>
                 </div>
+
+                <div class="form-group m-2">
+                    <label for="lastname">Apedillo del usuario</label>
+                    <input type="text" class="form-control" name="lastname" id="lastname" placeholder="Ingrese sus apellidos" Required>
+                    <small id="lastnameHelp" class="form-text text-muted">Algunos ejemplos son: Rodríguez, González, Fernández, etc.</small>
+               </div>
 
                 <div class="form-group m-2">
                     <label for="numberphone">Teléfono</label>

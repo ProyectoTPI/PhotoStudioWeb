@@ -71,23 +71,23 @@
 
               <div class="form-group m-3">
                 <label for="username">Nombre de usuario</label>
-                <input type="text" class="form-control" name="username" id="username" placeholder="Ingrese el nombre usuario" Required>
+                <input type="text" class="form-control" name="username" id="username" placeholder="Ingrese el nombre usuario" Required readonly>
               </div>
 
               <div class="form-group m-3">
                 <label for="lastname">Apedillo del usuario</label>
-                <input type="text" class="form-control" name="lastname" id="lastname" placeholder="Ingrese el nombre usuario" Required>
+                <input type="text" class="form-control" name="lastname" id="lastname" placeholder="Ingrese sus apellidos" Required readonly>
               </div>
 
               <div class="form-group m-3">
                 <label for="numberphone">Número de teléfono</label>
-                <input type="text" class="form-control" id="numberphone" name="numberphone" placeholder="Ingrese su numero de teléfono" Required>
+                <input type="text" class="form-control" id="numberphone" name="numberphone" placeholder="Ingrese su numero de teléfono" Required readonly>
               </div>
 
               <div class="form-group m-3">
                 <label for="email">Dirección de correo electrónico</label>
                 <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp"
-                  placeholder="Ingrese su correo electrónico" Required>
+                  placeholder="Ingrese su correo electrónico" Required readonly>
                 <small id="emailHelp" class="form-text text-muted">Nunca compartiremos tu correo electrónico con nadie
                   más.</small>
               </div>
