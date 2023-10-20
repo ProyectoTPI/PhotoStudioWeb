@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $transaction_model = new TransactionModel();
     $re = $transaction_model->register($transaction_data);
 
-    if (!$re){
+    if (!$re) {
         echo "Error en el registro. Inténtalo de nuevo.";
     }
 
@@ -46,5 +46,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     header("Location: ../../index.php");
 
 }
-
-?>
