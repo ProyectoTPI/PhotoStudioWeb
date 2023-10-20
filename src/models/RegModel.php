@@ -1,4 +1,5 @@
 <?php
+
 $db = new Connection();
 $conn = $db->getConnection();
 
@@ -14,7 +15,7 @@ class RegModel
     public function createUser($username, $password, $name, $dui, $lastname, $numberphone, $email)
     {
         if ($this->connection === null) {
-            return false; 
+            return false;
         }
 
         $userInsertSQL = "INSERT INTO usuarios (usuario, contrasenia, fecha_creacion) VALUES (:username, :password, NOW())";
@@ -35,15 +36,12 @@ class RegModel
             $stmtClient->bindParam(':userId', $userId, PDO::PARAM_INT);
 
             if ($stmtClient->execute()) {
-                return true; 
+                return true;
             } else {
-                return false; 
+                return false;
             }
         } else {
-            return false; 
+            return false;
         }
     }
 }
-
-
-?>

@@ -1,11 +1,12 @@
 <?php
+
 include '../config/Connection.php';
 include '../models/RegModel.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_POST['name'];
     $lastname = $_POST['lastname'];
-    $username = $_POST['username'];  
+    $username = $_POST['username'];
     $password = $_POST['password'];
     $password2 = $_POST['password2'];
 
@@ -36,4 +37,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "Error en el registro. Inténtalo de nuevo.";
     }
 }
-?>
