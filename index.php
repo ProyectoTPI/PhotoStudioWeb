@@ -23,7 +23,6 @@
     <form id="paypal-form" action="src/controllers/PaypalController.php" method="post">
         <input type="hidden" name="name" id="package-input" value="">
         <input type="hidden" name="price" id="price-input" value="">
-        <!-- <input type="hidden" name="concept" id="concept-input" value=""> -->
         <input type="hidden" name="transaction" id="transaction-input" value="">
     </form>
 
@@ -37,11 +36,9 @@
         let form = document.getElementById("paypal-form");
         let pkgName = document.getElementById("package-description").innerHTML;
         let pkgPrice = document.getElementById("package-price").innerHTML;
-        // let pkgConcept = document.getElementById("concept-price").innerHTML;
 
         let pkgNameInput = document.getElementById("package-input");
         let pkgPriceInput = document.getElementById("price-input");
-        // let pkgConceptInput = document.getElementById("concept-input");
         let pkgTransactionInput = document.getElementById("transaction-input");
 
         paypal.Buttons({
