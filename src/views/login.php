@@ -35,7 +35,7 @@
               </div>
               
            
-              <form method="post" action="../controllers/UsrLoginController.php">
+              <form method="post" action="./../controllers/LoginController.php">
                                 
                   <div class="form-group row">
                         <label for="username" class="col-xl-2 col-form-label">Nombre de usuario</label>
