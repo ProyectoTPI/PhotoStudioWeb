@@ -29,7 +29,7 @@
              <p class="eslogan">¡Registra una cita para vivir "la experiencia" de los servicios de PhotoStudio!</p>
           </div>
 
-          <form>
+          <form method="post" action="#" >
 
           <div class="row m-1">
                   <div class="form-group  col-4">
