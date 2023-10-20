@@ -1,5 +1,13 @@
 <?php
 
+$envFilePath = '../../.env';
+if (file_exists($envFilePath)) {
+    $envVars = parse_ini_file($envFilePath);
+    foreach ($envVars as $key => $value) {
+        putenv("$key=$value");
+    }
+}
+
 class Connection
 {
     private $host;
@@ -10,10 +18,12 @@ class Connection
 
     public function __construct()
     {
+        
         $this->host = getenv("HOST");
         $this->username = getenv("USERNAME");
         $this->password = getenv("PASSWORD");
         $this->database = getenv("DATABASE");
+        
 
         $connection_string = "mysql:host=$this->host;dbname=$this->database;charset=utf8";
 

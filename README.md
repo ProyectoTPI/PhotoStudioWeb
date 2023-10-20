@@ -19,13 +19,6 @@ This is a PHP vanilla application with HTML views. It includes a basic file stru
 - `composer.lock`: Contains exact versions of dependencies installed via Composer.
 - `README.md`: Documentation for the project.
 
-## Installation
-
-1. Clone the repository.
-2. Run `composer install` to install dependencies.
-3. Configure your web server to serve the `public` directory.
-4. Access the application in your web browser.
-
 ## Usage
 
 The application has a single route, the root route `/`. It displays the home page, which includes a welcome message and a list of users.
