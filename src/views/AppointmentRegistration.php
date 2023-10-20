@@ -28,7 +28,7 @@
           <p class="eslogan">¡Registra una cita para vivir "la experiencia" de los servicios de PhotoStudio!</p>
         </div>
 
-        <form action="CitasController.php" method="POST">
+        <form action="AppointmentController.php" method="POST">
 
           <div class="row m-1">
             <div class="form-group  col-4">
