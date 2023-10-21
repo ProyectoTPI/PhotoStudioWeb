@@ -77,7 +77,7 @@ ul li:hover a {
 }
 
 .container {
-    background: url("../IMG/fondoBosque.jpg") no-repeat;
+    background: url("../IMG/fondoHome.jpg") no-repeat;
     background-position: center;
     background-size: cover;
     height: 100vh;
