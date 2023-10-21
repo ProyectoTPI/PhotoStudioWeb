@@ -14,11 +14,6 @@ require_once("../models/UserModel.php");
 
 <body>
 
-	<form method="post" action="#">
-		<input type="text" name="username" placeholder="Username" required>
-		<input type="password" name="password" placeholder="Password" required>
-		<input type="submit" name="login" value="Login">
-
 		<?php
 
 
