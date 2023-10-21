@@ -16,5 +16,5 @@ content += "</div>";
 photoContainer.innerHTML = content;
 
 function getPhotoElement(photo_id){
-    return '<a href="#" class="photo"><img alt="Photo '+ photo_id +'" src="img/photo '+ photo_id +'.jpg"/></a>';
+    return '<a href="#" class="photo"><img alt="Photo '+ photo_id +'" src="src/views/img/photo '+ photo_id +'.jpg"/></a>';
 }
