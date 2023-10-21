@@ -48,7 +48,7 @@
 
             <div class="form-group col-4">
               <label for="idpackage">Identificador del paquete</label>
-              <select class=" form-control" name="idpackage" id="idpackage" Required>
+              <select class=" form-control" name="idpackage" id="idpackage" Required value="<?= $paquete_id; ?>">
                 <option value="1">Paquete 1</option>
                 <option value="2">Paquete 2 </option>
                 <option value="3">Paquete 3</option>

@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $package_result = $conn->query($package_query);
     $package_data = $package_result->fetch_assoc();
 
-    // Consulta para obtener la información del empleado
+    // Consulta para obtener la información del empleado.
     $queryEmpleado = "SELECT nombre, apellido FROM empleados WHERE empleado_id = $empleado_id";
     $resultEmpleado = $mysqli->query($queryEmpleado);
     $empleadoData = $resultEmpleado->fetch_assoc();
