@@ -1,3 +1,4 @@
+
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Parisienne&family=Roboto:wght@100;500&family=Source+Sans+3:ital,wght@0,500;1,300&display=swap');
 * {
@@ -14,8 +15,7 @@
     
 }
 
-
-/*css login*/
+/***********************************************************************CSS LOGIN***********************************************************************/
 .container-custom{
     margin-top: 7%;
     width: 90%;
@@ -47,4 +47,329 @@ display: none;
 
 .textarea{
     width: 100%;
+}
+
+/***********************************************************************CSS LANDING PAGE***********************************************************************/
+/**************************COMMON STYLES**************************/
+*{
+    box-sizing: border-box; 
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/**************************HEADER STYLES**************************/
+header{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1{
+    margin: 30px;
+    flex-grow: 1;
+    text-align: center;
+}
+
+header ul{
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 20px;
+    padding: 0;
+}
+
+header ul li a{
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    margin: 10px;
+    color: black;
+    transition: all 0.3s;
+}
+
+header ul li a:hover, header ul li a.active{
+    color: #f44336;
+    border-bottom: 2px solid #f44336;
+}
+
+@media only screen and (min-width: 1200px){
+    header h1{
+        text-align: left;
+    }
+    header ul{
+        justify-content: flex-end;
+    }
+}
+
+/**************************SIDEBAR STYLES**************************/
+#sidebar ul{
+    margin: 0;
+    padding: 0 60px;
+    list-style: none;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+}
+
+#sidebar ul li{
+    margin: 5px;
+    font-size: 25px;
+    width: 100%;
+}
+
+#sidebar ul li a{
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: black;
+    transition: all 0.3s;
+}
+
+#sidebar ul li a:hover, #sidebar ul li a.active{
+    color: #f44336;
+    border-left: 5px solid #f44336;
+}
+
+@media only screen and (max-width: 600px){
+    #sidebar ul li{
+        width: auto;
+    }
+
+    #sidebar ul{
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+
+    #sidebar ul li a:hover, #sidebar ul li a.active{
+        border: none;
+        border-bottom: 5px solid #f44336;
+    }
+}
+
+@media only screen and (min-width: 600px){
+    #sidebar ul li{
+        width: auto;
+    }
+
+    #sidebar ul{
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+
+    #sidebar ul li a:hover, #sidebar ul li a.active{
+        border: none;
+        border-bottom: 5px solid #f44336;
+    }
+}
+
+@media only screen and (min-width: 768px){
+    #sidebar ul{
+        flex-flow: column wrap;
+        align-items: flex-start;
+    }
+
+    #sidebar ul li a:hover, #sidebar ul li a.active{
+        border: none;
+        border-left: 5px solid #f44336;
+    }
+}
+
+/**************************GRID STYLES**************************/
+#container{
+    display: grid;
+    grid-template-areas: 'header header'
+                         'sidebar section';
+}
+
+header{
+    grid-area: header;
+}
+
+#sidebar{
+    grid-area: sidebar;
+}
+
+#section-container{
+    grid-area: section;
+}
+
+/*#photo-container{
+    grid-area: section;
+}
+
+#package-container{
+    grid-area: section;
+}
+
+#about-container{
+    grid-area: section;
+}*/
+
+@media only screen and (max-width: 600px){
+    #container{
+        grid-template-areas: 'header'
+                             'sidebar'
+                             'section';
+    }
+}
+
+@media only screen and (min-width: 600px){
+    #container{
+        grid-template-areas: 'header'
+                             'sidebar'
+                             'section';
+    }
+}
+
+@media only screen and (min-width: 768px){
+    #container{
+        display: grid;
+        grid-template-areas: 'header header'
+                             'sidebar section';
+    }
+}
+
+/**************************PHOTOS STYLES**************************/
+#photo-container{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+#photo-container .column{
+    flex: 50%;
+    max-width: 50%;
+    padding: 0 4px;
+}
+
+#photo-container .column .photo{
+    margin-top: 8px;
+    vertical-align: middle;
+}
+
+#photo-container .column .photo img {
+    width: 100%;
+    height: auto;
+}
+
+@media only screen and (max-width: 600px){
+    #photo-container .column{
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
+@media only screen and (min-width: 600px){
+    .column{
+        flex: 50%;
+        max-width: 100%;
+    }
+}
+
+@media only screen and (min-width: 768px){
+    .column{
+        flex: 33.33%;
+        max-width: 50%;
+    }
+}
+
+@media only screen and (min-width: 992px){
+    .column{
+        flex: 25%;
+        max-width: 100%;
+    }
+}
+
+/**************************PACKAGES STYLES**************************/
+img{
+    max-width: 100%;
+}
+
+#package-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.package{
+    border-radius: 10px;
+}
+
+.package:hover{
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+}
+
+.package img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    transition: all 0.3s;
+}
+
+.package figure{
+    overflow: hidden;
+}
+
+.package:hover img{
+    transform: scale(1.2);
+}
+
+.package-info{
+    padding: 15px 30px;
+    line-height: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.price{
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.package-info button{
+    border: none;
+    background: none;
+    background-color: black;
+    color: white;
+    padding: 15px 10px;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 600px){
+    #package-container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media only screen and (min-width: 600px){
+    #package-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (min-width: 768px){
+    #package-container{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/**************************FOOTER STYLES**************************/
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border-top: 1px solid #ccc;
+    padding: 5px 0;
+    text-align: center;
 }
