@@ -7,8 +7,8 @@
     text-decoration: none;
 }
 
-.titulo{
-font-size: xx-large;
+.titulo {
+    font-size: xx-large;
 }
 
 body {
@@ -55,7 +55,7 @@ body {
 
 ul li:hover a {
     padding-left: 50px;
-   }
+}
 
 .sidebar ul a i {
     margin-right: 8px;
@@ -67,7 +67,7 @@ ul li:hover a {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right:20px ;
+    margin-right: 20px;
 }
 
 .logo img {
@@ -84,9 +84,8 @@ ul li:hover a {
     transition: all .5s;
 }
 
-#toggleSidebarButton
-{
-    display:none;
+#toggleSidebarButton {
+    display: none;
     margin-left: 500px;
 }
 
@@ -97,10 +96,9 @@ ul li:hover a {
     color: white;
     padding: 4px 10px;
     transition: all 0.5s;
-    position:fixed;
+    position: fixed;
     cursor: pointer;
     background: #000000;
     border-radius: 3px;
     z-index: 1;
 }
-
