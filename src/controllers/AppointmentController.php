@@ -1,9 +1,10 @@
 <?php
+
 include '../config/Connection.php';
 include '../views/AppointmentRegistration.php';
 
 // Verificar si se ha enviado el formulario
- 
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $cliente_id = $_POST['idclient'];
     $paquete_id = $_POST['idpackage'];
@@ -28,13 +29,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $queryEmpleado = "SELECT nombre, apellido FROM empleados WHERE empleado_id = $empleado_id";
     $resultEmpleado = $mysqli->query($queryEmpleado);
     $empleadoData = $resultEmpleado->fetch_assoc();
-    
+
 
     // Insertar la cita en la base de datos
     $sql = "INSERT INTO citas (evento, detalle, hora_inicio, hora_fin, cliente_id, paquete_id) 
             VALUES ('$nameevent', '$eventdetail', '$date $starttime', '$date $endtime', $cliente_id, $paquete_id)";
 
-    if ($conn->query($sql) === TRUE) {
+    if ($conn->query($sql) === true) {
         echo "Cita registrada con éxito";
     } else {
         echo "Error al registrar la cita: " . $conn->error;
@@ -42,4 +43,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 // Cerrar la conexión a la base de datos
 $conn->close();
-?>
