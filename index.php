@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Royale Photo Studio</title>
-    <link rel="icon" type="image/png" href="src/views/img/cmera logo.png"/>
+    <link rel="icon" type="image/png" href="src/views/img/cmera logo.png" />
     <link rel="stylesheet" href="src/views/css/style.css">
 </head>
 
@@ -97,7 +97,7 @@
             <div id="about-container">
                 <h1>Señor xD</h1>
             </div>
-        </div>   
+        </div>
     </div>
 
     <footer>© 2020 Royale Photo Studio</footer>
@@ -114,8 +114,8 @@
     <a href="./src/views/RegisterUser.php">regis</a>
 
     <script src="https://www.paypal.com/sdk/js?client-id=AekIt_oBmEwI3_VpKUkZj1InGlqq8cWuGdRrfynoSqHCN_cO4G2zFoau4b_nyYpAkIVXFFlwvDTQ6rTX&currency=USD"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-
         // Form values injection
         let form = document.getElementById("paypal-form");
         let pkgName = document.getElementById("package-description").innerHTML;
@@ -142,7 +142,7 @@
             },
 
             onApprove: function(data, actions) {
-                return actions.order.capture().then(function (detalles) {
+                return actions.order.capture().then(function(detalles) {
 
                     let data = JSON.stringify(detalles)
                     pkgNameInput.value = pkgName;
@@ -150,12 +150,23 @@
                     pkgTransactionInput.value = data;
                     form.submit()
 
-                    alert("Pago realizado");
+                    //alert("Pago realizado");
+                    Swal.fire({
+                        title: 'Pago realizado',
+                        text: 'Su pago ha sido procesado con éxito.',
+                        icon: 'success',
+                        timer: 4000, 
+                        showConfirmButton: false // Esto oculta el botón "OK"
+                    });
                 });
             },
             onCancel: function(detalles) {
-                alert("Pago cancelado");
+                //alert("Pago cancelado");
                 console.log(detalles);
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Su pago ha sido cancelado!',
+                })
             }
         }).render('#paypal-button-container');
     </script>
