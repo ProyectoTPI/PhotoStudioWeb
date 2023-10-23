@@ -4,7 +4,6 @@ require_once("../config/Connection.php");
 class CarritoModel{
 
    private $conn;
-
   public function listarPaquetes(){
     $cnx= new Connection();
     $cn= $cnx->getConnection();

@@ -4,7 +4,6 @@ include '../models/CarritoModel.php';
 $op=$_REQUEST['op'];
 
 
-    
      switch($op){
         case 1:
     unset($_SESSION['lista']);

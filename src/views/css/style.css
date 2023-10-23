@@ -482,7 +482,6 @@ header{
     justify-content: space-between;
     align-items: center;
 }
-
 header h1{
     margin: 30px;
     flex-grow: 1;

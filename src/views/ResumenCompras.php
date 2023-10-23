@@ -19,7 +19,6 @@ $lista=$_SESSION['lista'];
 
 </head>
 <body class="contenido">
-
 <div id="container">
         <header>
             <h1>Royale Photo Studio</h1>
