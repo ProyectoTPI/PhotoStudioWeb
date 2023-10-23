@@ -15,7 +15,10 @@
 <body>
 
     <?php include 'home.php'; ?>
+    <?php include '../controllers/EmployeeController.php'; ?>
     <h2>Mantenimiento de empleados</h2>
+
+
     <table class="table table-striped">
         <thead>
             <tr>
@@ -28,31 +31,26 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Juan</td>
-                <td>Pérez</td>
-                <td>juan@example.com</td>
-                <td>12345678-9</td>
-                <td>123-456-7890</td>
-                <td>
-                    <button class="btn btn-primary">Editar</button>
-                    <button class="btn btn-danger">Eliminar</button>
-                </td>
-            </tr>
-            <tr>
-                <td>María</td>
-                <td>González</td>
-                <td>maria@example.com</td>
-                <td>98765432-1</td>
-                <td>987-654-3210</td>
-                <td>
-                    <button class="btn btn-primary">Editar</button>
-                    <button class="btn btn-danger">Eliminar</button>
-                </td>
-            </tr>
+            <?php foreach ($employees as $employee) { ?>
+                <tr>
+                    <td><?php echo $employee['nombre']; ?></td>
+                    <td><?php echo $employee['apellido']; ?></td>
+                    <td><?php echo $employee['email']; ?></td>
+                    <td><?php echo $employee['dui']; ?></td>
+                    <td><?php echo $employee['telefono']; ?></td>
+                    <td>
+                        <form method="post" action="../views/employeeMaintenance.php">
+                            <input type="hidden" name="empleado_id" value="<?php echo $employee['empleado_id']; ?>">
+                            <button class="btn btn-primary">Editar</button>
+                            <button type="button" class="btn btn-danger eliminar-empleado" data-empleado-id="<?php echo $employee['empleado_id']; ?>">Eliminar</button>
+                        </form>
+                    </td>
+                </tr>
+            <?php } ?>
 
         </tbody>
     </table>
+
     <button class="btn btn-primary" id="agregarEmpleado">Agregar Empleado</button>
     <script src="./js/drawerClose.js"></script>
 </body>
@@ -100,21 +98,25 @@
 </div>
 
 
-<div class="modal fade" id="editarEmpleadoModal" tabindex="-1" role="dialog" aria-labelledby="editarEmpleadoModalLabel" aria-hidden="true">
+<div class="modal fade" id="eliminarEmpleadoModal" tabindex="-1" role="dialog" aria-labelledby="eliminarEmpleadoModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <!-- Contenido del modal para editar empleado -->
+            <div class="modal-body">
+                ¿Estás seguro de que deseas eliminar a este empleado?
+            </div>
+            <div class="modal-footer">
+            <form method="post" action="../views/employeeMaintenance.php">
+
+                    <input type="hidden" name="empleado_id" value="<?php echo $employee['empleado_id']; ?>">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" name="eliminarEmpleado" class="btn btn-danger">Eliminar</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>
 
-<div class="modal fade" id="eliminarEmpleadoModal" tabindex="-1" role="dialog" aria-labelledby="eliminarEmpleadoModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <!-- Contenido del modal para confirmar eliminación de empleado -->
-        </div>
-    </div>
-</div>
+
 <script>
     window.addEventListener('load', function() {
         toggleSidebar();

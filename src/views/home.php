@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== 'empleado') {
+    header('Location: pagina_de_error.php'); 
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -42,3 +50,4 @@
 </body>
 
 </html>
+?>

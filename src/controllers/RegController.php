@@ -5,21 +5,16 @@ include '../models/RegModel.php';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_POST['name'];
     $lastname = $_POST['lastname'];
-    $username = $_POST['username'];  
+    $username = $_POST['username'];
     $password = $_POST['password'];
-    $password2 = $_POST['password2'];
-
     $dui = $_POST['dui'];
     $email = $_POST['email'];
     $numberphone = $_POST['numberphone'];
 
-    if (empty($name) || empty($lastname) || empty($username) || empty($password) || empty($dui) || empty($email) || empty($numberphone) || empty($password2)) {
-        echo "Error en los datos ingresados. Hay campos obligatorios.";
-        exit;
-    }
+    $rol = 'cliente';
 
-    if ($password !== $password2) {
-        echo "Las contraseñas no coinciden.";
+    if (empty($name) || empty($lastname) || empty($username) || empty($password) || empty($dui) || empty($email) || empty($numberphone)) {
+        echo "Error en los datos ingresados. Hay campos obligatorios.";
         exit;
     }
 
@@ -28,12 +23,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $db = new Connection();
     $conn = $db->getConnection();
 
-    $userModel = new RegModel($conn);
+    $clientModel = new RegModel($conn);
 
-    if ($userModel->createUser($username, $hashedPassword, $name, $dui, $lastname, $numberphone, $email)) {
-        echo "Successful. ¡Bienvenido!";
+    if ($clientModel->createClient($username, $hashedPassword, $name, $dui, $lastname, $numberphone, $email, $rol)) {
+        echo "Cliente registrado exitosamente.";
     } else {
-        echo "Error en el registro. Inténtalo de nuevo.";
+        echo "Error en el registro del cliente. Inténtalo de nuevo.";
     }
 }
 ?>

@@ -8,23 +8,35 @@ class UserModel extends Connection
 
     public function __construct()
     {
-
         $this->conn = new Connection();
         $this->conn = $this->conn->getConnection();
     }
 
-    public function login($username)
+    public function login($username, $password)
     {
-        $query_parameters = [$username];
+        $query = "SELECT usuario_id, contrasenia, rol FROM usuarios WHERE usuario = ?";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute([$username]);
 
-        $connection_obj = new Connection();
-        $test_connection = $connection_obj->getConnection();
+        if ($user = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            if (password_verify($password, $user['contrasenia'])) {
 
-        $query = "select * from usuarios where usuario = ?";
-        $cursor = $test_connection->prepare($query);
-        $cursor->execute($query_parameters);
-        $re = $cursor->fetch(PDO::FETCH_ASSOC);
+                $_SESSION['usuario_id'] = $user['usuario_id'];
 
-        return $re;
+                if ($user['rol'] === 'empleado') {
+                    $_SESSION['rol'] = 'empleado';
+                    header('Location: /src/views/home.php'); 
+                    exit;
+                } elseif ($user['rol'] === 'cliente') {
+                    $_SESSION['rol'] = 'cliente';
+                    header('Location: /index.php'); 
+                    exit;
+                }
+            } else {
+                echo "Contraseña incorrecta";
+            }
+        } else {
+            echo "Usuario no encontrado";
+        }
     }
 }

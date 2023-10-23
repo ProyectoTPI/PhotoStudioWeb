@@ -11,6 +11,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
     $numberphone = $_POST['numberphone'];
 
+    $rol = 'empleado';
+
     if (empty($name) || empty($lastname) || empty($username) || empty($password) || empty($dui) || empty($email) || empty($numberphone)) {
         echo "Error en los datos ingresados. Hay campos obligatorios.";
         exit;
@@ -23,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $employeeModel = new RegEmployeeModel($conn);
 
-    if ($employeeModel->createEmployee($dui, $name, $lastname, $email, $numberphone, $username, $hashedPassword)) {
+    if ($employeeModel->createEmployee($username, $hashedPassword, $name, $dui, $lastname, $numberphone, $email, $rol)) {
         echo "Empleado registrado exitosamente.";
     } else {
         echo "Error en el registro del empleado. Inténtalo de nuevo.";

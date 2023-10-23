@@ -11,16 +11,17 @@ class RegEmployeeModel
         $this->connection = $db;
     }
 
-    public function createEmployee($dui, $name, $lastname, $email, $numberphone, $username, $password)
+    public function createEmployee($username, $password, $name, $dui, $lastname, $numberphone, $email, $rol)
     {
         if ($this->connection === null) {
             return false;
         }
 
-        $userInsertSQL = "INSERT INTO usuarios (usuario, contrasenia, fecha_creacion) VALUES (:username, :password, NOW())";
+        $userInsertSQL = "INSERT INTO usuarios (usuario, contrasenia, fecha_creacion, rol) VALUES (:username, :password, NOW(), :rol)";
         $stmtUser = $this->connection->prepare($userInsertSQL);
         $stmtUser->bindParam(':username', $username, PDO::PARAM_STR);
         $stmtUser->bindParam(':password', $password, PDO::PARAM_STR);
+        $stmtUser->bindParam(':rol', $rol, PDO::PARAM_STR);
 
         if ($stmtUser->execute()) {
             $userId = $this->connection->lastInsertId();
