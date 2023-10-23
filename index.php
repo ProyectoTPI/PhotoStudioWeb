@@ -14,7 +14,6 @@
 <body>
     <div id="paypal-button-container"></div>
     <p id="result-message"></p>
-    <a href="src/controllers/LoginController.php">Login form</a>
 
     <div id="container">
         <header>
@@ -23,7 +22,7 @@
                 <li><a href="#">INICIAR SESIÓN</a></li>
                 <li><a href="#" class="active">Inicio</a></li>
                 <li><a href="#">Contacto</a></li>
-                <li><a href="#">Carrito</a></li>
+                <li><a href="./src/controllers/CarritoController.php?op=1">Carrito</a></li>
             </ul>
         </header>
 
@@ -115,61 +114,6 @@
 
     <script src="https://www.paypal.com/sdk/js?client-id=AekIt_oBmEwI3_VpKUkZj1InGlqq8cWuGdRrfynoSqHCN_cO4G2zFoau4b_nyYpAkIVXFFlwvDTQ6rTX&currency=USD"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-        // Form values injection
-        let form = document.getElementById("paypal-form");
-        let pkgName = document.getElementById("package-description").innerHTML;
-        let pkgPrice = document.getElementById("package-price").innerHTML;
-
-        let pkgNameInput = document.getElementById("package-input");
-        let pkgPriceInput = document.getElementById("price-input");
-        let pkgTransactionInput = document.getElementById("transaction-input");
-
-        paypal.Buttons({
-            style: {
-                color: 'blue',
-                shape: 'pill',
-                label: 'pay',
-            },
-            createOrder: function(data, actions) {
-                return actions.order.create({
-                    purchase_units: [{
-                        amount: {
-                            value: pkgPrice
-                        }
-                    }]
-                });
-            },
-
-            onApprove: function(data, actions) {
-                return actions.order.capture().then(function(detalles) {
-
-                    let data = JSON.stringify(detalles)
-                    pkgNameInput.value = pkgName;
-                    pkgPriceInput.value = pkgPrice;
-                    pkgTransactionInput.value = data;
-                    form.submit()
-
-                    //alert("Pago realizado");
-                    Swal.fire({
-                        title: 'Pago realizado',
-                        text: 'Su pago ha sido procesado con éxito.',
-                        icon: 'success',
-                        timer: 4000, 
-                        showConfirmButton: false // Esto oculta el botón "OK"
-                    });
-                });
-            },
-            onCancel: function(detalles) {
-                //alert("Pago cancelado");
-                console.log(detalles);
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Su pago ha sido cancelado!',
-                })
-            }
-        }).render('#paypal-button-container');
-    </script>
 
 </body>
 
