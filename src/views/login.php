@@ -51,7 +51,7 @@
                   </div>
                   <div class="row d-flex justify-content-center form-margint">
                         <div class="col-xl-3">
-                          <input class="btn btn-lg btn-primary" type="submit" name="login" value="Iniciar Sesión">
+                          <input class="btn btn-lg btn-primary" type="submit" name="login" value="Login">
                         </div>
                   </div>
 
