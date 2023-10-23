@@ -40,11 +40,29 @@
 }
 
 
-.prueba{
-display: none;
 
+
+@media (max-width: 1200px) {
+
+    .prueba{
+        display: none;
+        width: 0;
+        
+        }
+
+    .prueba2{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+             
+
+    }
+
+    .prueba3{
+        width: 100%;
+    }
+
+    
+    
 }
 
-.textarea{
-    width: 100%;
-}

@@ -20,11 +20,11 @@
       <div class="card mb-3">
         <div class="row g-0">
           
-          <div class="col-md-4 pruba">
+          <div class="col-md-4 prueba">
             <img src="img/PhotoStudio0000.jpg" class="img-fluid rounded-start" alt="Un camarografo">
           </div>
           
-          <div class="col-md-8">
+          <div class="col-md-8 prueba2">
             <div class="card-body">
               
               <div class="d-flex  justify-content-center">
@@ -35,17 +35,17 @@
               </div>
               
            
-              <form method="post" action="./../controllers/LoginController.php">
+              <form class="prueba3" method="post" action="./../controllers/LoginController.php">
                                 
                   <div class="form-group row">
                         <label for="username" class="col-xl-2 col-form-label">Nombre de usuario</label>
-                        <div class="col-sm-10">
+                        <div class="col-sm-10 prueba3">
                           <input type="text" class="form-control" id="username" name="username" placeholder="Ingrese su nombre de usuario, ejemplo: Natanael" required>
                         </div>
                   </div>
                   <div class="form-group row">
                         <label for="password" class="col-xl-2 col-form-label">Contraseña</label>
-                        <div class="col-sm-10">
+                        <div class="col-sm-10 prueba3">
                           <input type="password" class="form-control" id="password" name="password" placeholder="Ingrese su contraseña, ejem: 1234" required>
                         </div>
                   </div>
