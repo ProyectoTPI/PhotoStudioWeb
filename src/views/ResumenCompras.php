@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 session_start();
-$lista=$_SESSION['lista'];
+$lista = $_SESSION['lista'];
 
 ?>
 
@@ -44,30 +44,30 @@ $lista=$_SESSION['lista'];
         </tr>
         
            <?php
-      $num=0;
-      $monto=0;
-         foreach($lista as $reg){
-          $num++;
-          $monto=$reg['precio']+$monto;
-         
-    switch($reg['paquete_id']){
-        case '1':
-            $foto="../../src/views/img/pregnant_photo.jpg";
-            break;
-            case "2":
-                $foto= "../../src/views/img/family_photo.jpg";
-                break;
-                case "3":
-                    $foto= "../../src/views/img/individual_photo.jpg";
-                    break;
-                    case "4":
-                       $foto= "../../src/views/img/beach_photo.jpg";
-                       break;
-                       case "5":
-                        $foto= "../../src/views/img/professional_photo.jpg";
-                       }
+      $num = 0;
+$monto = 0;
+foreach($lista as $reg) {
+    $num++;
+    $monto = $reg['precio'] + $monto;
 
-          ?>
+    switch($reg['paquete_id']) {
+        case '1':
+            $foto = "../../src/views/img/pregnant_photo.jpg";
+            break;
+        case "2":
+            $foto = "../../src/views/img/family_photo.jpg";
+            break;
+        case "3":
+            $foto = "../../src/views/img/individual_photo.jpg";
+            break;
+        case "4":
+            $foto = "../../src/views/img/beach_photo.jpg";
+            break;
+        case "5":
+            $foto = "../../src/views/img/professional_photo.jpg";
+    }
+
+    ?>
           
          <tr>
            <td class="ite"><?php echo $num ?></td>
@@ -80,13 +80,13 @@ $lista=$_SESSION['lista'];
             </form>
          </tr>
        <?php
-         }
-       ?>
+}
+?>
         
     </table>
     <div class="inline">
     <h1 class="monto">Total a pagar </h1>
-    <h1 class="monto"> <?php  echo '$ '. number_format($monto,2) ?></h1>
+    <h1 class="monto"> <?php  echo '$ '. number_format($monto, 2) ?></h1>
     </div>
     </div>
 
