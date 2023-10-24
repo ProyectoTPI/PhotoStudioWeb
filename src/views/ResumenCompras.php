@@ -50,6 +50,7 @@ $lista=$_SESSION['lista'];
           $num++;
           $monto=$reg['precio']+$monto;
          
+          //Tnemos la imagen para los 5 paquetes si el paquete es nuevo aparece una imagen predeterminada
     switch($reg['nombre_comercial']){
         case 'SESION FAMILIAR':
             $foto="../../src/views/img/family_photo.jpg";
@@ -72,7 +73,6 @@ $lista=$_SESSION['lista'];
 
                        }
                        
-
           ?>
           
          <tr>
