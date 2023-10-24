@@ -20,11 +20,11 @@
       <div class="card mb-3">
         <div class="row g-0">
           
-          <div class="col-md-4 pruba">
+          <div class="col-md-4 not-img">
             <img src="img/PhotoStudio0000.jpg" class="img-fluid rounded-start" alt="Un camarografo">
           </div>
           
-          <div class="col-md-8">
+          <div class="col-md-8 form100">
             <div class="card-body">
               
               <div class="d-flex  justify-content-center">
@@ -35,22 +35,22 @@
               </div>
               
            
-              <form method="post" action="./../controllers/LoginController.php">
+              <form class="form-margin" method="post" action="./../controllers/LoginController.php">
                                 
-                  <div class="form-group row">
-                        <label for="username" class="col-xl-2 col-form-label">Nombre de usuario</label>
-                        <div class="col-sm-10">
+                  <div class="form-group row col-form-label label-size">
+                        <label for="username" class="col-xl-2 ">Nombre de usuario</label>
+                        <div class="col-sm-10 width-col">
                           <input type="text" class="form-control" id="username" name="username" placeholder="Ingrese su nombre de usuario, ejemplo: Natanael" required>
                         </div>
                   </div>
-                  <div class="form-group row">
-                        <label for="password" class="col-xl-2 col-form-label">Contraseña</label>
-                        <div class="col-sm-10">
+                  <div class="form-group row col-form-label label-size">
+                        <label for="password" class="col-xl-2">Contraseña</label>
+                        <div class="col-sm-10 width-col">
                           <input type="password" class="form-control" id="password" name="password" placeholder="Ingrese su contraseña, ejem: 1234" required>
                         </div>
                   </div>
                   <div class="row d-flex justify-content-center form-margint">
-                        <div class="col-xl-3">
+                        <div class="col-lg-3">
                           <input class="btn btn-lg btn-primary" type="submit" name="login" value="Login">
                         </div>
                   </div>

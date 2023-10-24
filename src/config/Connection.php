@@ -1,7 +1,6 @@
 <?php
 
-$envFilePath = __DIR__ . '/../../.env';
-
+$envFilePath ='../../.env';
 if (file_exists($envFilePath)) {
     $envVars = parse_ini_file($envFilePath);
     foreach ($envVars as $key => $value) {
