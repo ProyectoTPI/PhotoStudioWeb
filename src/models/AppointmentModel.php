@@ -1,15 +1,18 @@
 <?php
 
 require_once("../config/Connection.php");
-class AppointmentModel extends Connection {
+class AppointmentModel extends Connection
+{
     private $conn;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->conn = new Connection();
         $this->conn = $this->conn->getConnection();
     }
 
-    public function registrarCita($data) {
+    public function registrarCita($data)
+    {
         $query = "INSERT INTO citas (evento, detalle, hora_inicio, hora_fin, cliente_id, paquete_id) 
         VALUES (:evento, :detalle, :hora_inicio, :hora_fin, :cliente_id, :paquete_id)";
         $stmt = $this->conn->prepare($query);

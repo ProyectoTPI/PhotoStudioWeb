@@ -1,9 +1,12 @@
 <?php
+
 include '../config/Connection.php';
 require_once '..models/AppointmentController.php';
 
-class AppointmentController {
-    public function registrarCita() {
+class AppointmentController
+{
+    public function registrarCita()
+    {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $data = [
                 'evento' => $_POST['nameevent'],
@@ -30,4 +33,3 @@ class AppointmentController {
 
 $controller = new AppointmentController();
 $controller->registrarCita();
-?>
