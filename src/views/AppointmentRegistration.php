@@ -49,10 +49,10 @@
 
             <div class="form-group col-md-4 col-form-label">
               <label for="idpackage">ID del paquete</label>
-              <select class=" form-control" name="idpackage" id="idpackage" Required value="<?= $paquete_id; ?>">
-                <option value="1">Paquete 1</option>
-                <option value="2">Paquete 2 </option>
-                <option value="3">Paquete 3</option>
+              <select class=" form-control" name="idpackage" id="idpackage">
+                <option value="1" <?= isset($paquete_id) && $paquete_id == 1 ? 'selected' : '' ?>>Paquete 1</option>
+                <option value="2" <?= isset($paquete_id) && $paquete_id == 2 ? 'selected' : '' ?>>Paquete 2</option>
+                <option value="3" <?= isset($paquete_id) && $paquete_id == 3 ? 'selected' : '' ?>>Paquete 3</option>
               </select>
               <small id="optionHelp" class="form-text text-muted">Haga clic para seleccionar una opción</small>
             </div>
@@ -61,7 +61,7 @@
           <div class="row">
             <div class="form-group  col-md-4 col-form-label">
               <label for="idemployee">ID del empleado</label>
-              <input type="text" class="form-control" id="idemployee" name="idemployee" value="<?= $empleado_id ?>" required readonly>
+              <input type="text" class="form-control" id="idemployee" name="idemployee" value="" required readonly>
             </div>
 
             <div class="form-group  col-md-8 col-form-label">
@@ -73,27 +73,27 @@
           <div class="row">
             <div class="form-group col-md-6 col-form-label">
               <label for="username">Nombre de usuario</label>
-              <input type="text" class="form-control" name="username" id="username" value="<?= $client_data['nombre'] ?>" required readonly>
+              <input type="text" class="form-control" name="username" id="username" value="<?= isset($client_data['nombre']) ? $client_data['nombre'] : '' ?>" required readonly>
             </div>
 
             <div class="form-group col-md-6 col-form-label">
               <label for="lastname">Apellidos del usuario</label>
-              <input type="text" class="form-control" name="lastname" id="lastname" value="<?= $client_data['apellido'] ?>" required readonly>
+              <input type="text" class="form-control" name="lastname" id="lastname" value="<?= isset($client_data['apellido']) ? $client_data['apellido'] : '' ?>" required readonly>
             </div>
           </div>
-          
+
           <div class="row">
             <div class="form-group col-md-6 col-form-label">
               <label for="numberphone">Número de teléfono</label>
-              <input type="text" class="form-control" id="numberphone" name="numberphone" value="<?= $client_data['telefono'] ?>" required readonly>
+              <input type="text" class="form-control" id="numberphone" name="numberphone" value="<?= isset($client_data['telefono']) ? $client_data['telefono'] : '' ?>" required readonly>
             </div>
 
             <div class="form-group col-md-6 col-form-label">
               <label for="email">Dirección de correo electrónico</label>
-              <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" value="<?= $client_data['email'] ?>" required readonly>
+              <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" value="<?= isset($client_data['email']) ? $client_data['email'] : '' ?>" required readonly>
             </div>
           </div>
-          
+
 
           <div class="form-group col-form-label">
             <label for="address">Dirección</label>
