@@ -21,6 +21,5 @@ class AppointmentModel extends Connection {
         $stmt->bindParam(':paquete_id', $data['paquete_id'], PDO::PARAM_INT);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
-        
     }
 }
