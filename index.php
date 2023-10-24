@@ -19,7 +19,7 @@
         <header>
             <h1>Royale Photo Studio</h1>
             <ul>
-                <li><a href="#">INICIAR SESIÓN</a></li>
+                <li><a href="src/views/login.php">INICIAR SESIÓN</a></li>
                 <li><a href="#" class="active">Inicio</a></li>
                 <li><a href="#">Contacto</a></li>
                 <li><a href="./src/controllers/CarritoController.php?op=1">Carrito</a></li>
@@ -28,9 +28,9 @@
 
         <div id="sidebar">
             <ul>
-                <li><a href="#" class="active">Sesiones</a></li>
-                <li><a href="#">Paquetes</a></li>
-                <li><a href="#">Sobre Nosotros</a></li>
+                <li><a href="#" class="active" data-content="photo-container">Sesiones</a></li>
+                <li><a href="#" data-content="package-container">Paquetes</a></li>
+                <li><a href="#" data-content="about-container">Sobre Nosotros</a></li>
             </ul>
         </div>
 
