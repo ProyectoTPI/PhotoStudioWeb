@@ -43,6 +43,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     echo "Successful. ¡Registro almacenado!";
-    header("Location: ../../index.php");
+    header("Location: ../views/ResumenCompras.php");
 
 }
