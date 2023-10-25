@@ -21,7 +21,7 @@
             <ul>
                 <li><a href="src/views/login.php">INICIAR SESIÓN</a></li>
                 <li><a href="index.php" class="active">Inicio</a></li>
-                <li><a href="#">Contacto</a></li>
+
                 <li><a href="./src/controllers/CarritoController.php?op=1">Carrito</a></li>
             </ul>
         </header>
