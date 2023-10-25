@@ -2,7 +2,6 @@
 <?php
 session_start();
 $lista=$_SESSION['lista'];
-
 ?>
 
 <html lang="en">
@@ -40,6 +39,7 @@ $lista=$_SESSION['lista'];
             <th>Imagen</th>
             <th class="duracion">Duracion</th>
             <th class="precio">Precio</th>
+            <th type="hidden">Concepto</th>
             <th class="accion">Accion</th>
         </tr>
         
@@ -50,23 +50,29 @@ $lista=$_SESSION['lista'];
           $num++;
           $monto=$reg['precio']+$monto;
          
-    switch($reg['paquete_id']){
-        case '1':
-            $foto="../../src/views/img/pregnant_photo.jpg";
+          //Tnemos la imagen para los 5 paquetes si el paquete es nuevo aparece una imagen predeterminada
+    switch($reg['nombre_comercial']){
+        case 'SESION FAMILIAR':
+            $foto="../../src/views/img/family_photo.jpg";
             break;
-            case "2":
-                $foto= "../../src/views/img/family_photo.jpg";
+            case 'SESION INDIVIDUAL':
+                $foto= "../../src/views/img/individual_photo.jpg";
                 break;
-                case "3":
-                    $foto= "../../src/views/img/individual_photo.jpg";
+                case 'SESION EMBARAZO':
+                    $foto= "../../src/views/img/pregnant_photo.jpg";
                     break;
-                    case "4":
+                    case "SESION PLAYA":
                        $foto= "../../src/views/img/beach_photo.jpg";
                        break;
-                       case "5":
+                       case "SESION PROFESIONAL":
                         $foto= "../../src/views/img/professional_photo.jpg";
-                       }
+                        break;
+                        default:
+                        $foto= "../../src/views/img/default.jpg";
+                        break;
 
+                       }
+                       
           ?>
           
          <tr>
@@ -74,7 +80,8 @@ $lista=$_SESSION['lista'];
            <td><?php echo $reg['nombre_comercial']; ?></td>
            <td><img class="imgResumen" src=" <?php echo $foto ?>" alt="Foto"></td>
             <td class ="duracion"><?php echo $reg['duracion']; ?></td>
-            <td class="precio"><?php echo '$'. $reg['precio']; ?></td>
+            <td class="precio" id="package-price"><?php echo '$'. $reg['precio']; ?></td>
+            <td type="hidden" id="package-description"><?php echo $reg['concepto']; ?></td>
             <form action="../controllers/carritoController.php?op=2" method="post">
             <td class="accion"><input type="submit" name="btnEliminar" id="btnEliminar" value="Eliminar"></td>
             </form>
@@ -88,17 +95,35 @@ $lista=$_SESSION['lista'];
     <h1 class="monto">Total a pagar </h1>
     <h1 class="monto"> <?php  echo '$ '. number_format($monto,2) ?></h1>
     </div>
+    <div  class="pay" id="paypal-button-container"></div>
+    <p id="result-message"></p> 
     </div>
 
 
+    <script src="public/js/script.js"></script>
     
     <!--Esto es lo que ya está sobre paypal-->
-    <div class="pay">
-    <div id="paypal-button-container"></div>
-    <p id="result-message"></p>
+    <form id="paypal-form" action="../../src/controllers/TransactionController.php" method="post">
+        <input type="hidden" name="name" id="package-input" value="">
+        <input type="hidden" name="price" id="price-input" value="">
+        <input type="hidden" name="transaction" id="transaction-input" value="">
+    </form>
+
+    <a href="./src/views/AppointmentRegistration.php">a</a>
+    <a href="./src/views/RegisterUser.php">regis</a>
+
     <script src="https://www.paypal.com/sdk/js?client-id=AekIt_oBmEwI3_VpKUkZj1InGlqq8cWuGdRrfynoSqHCN_cO4G2zFoau4b_nyYpAkIVXFFlwvDTQ6rTX&currency=USD"></script>
-    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script>
+        // Form values injection
+        let form = document.getElementById("paypal-form");
+        let pkgName = document.getElementById("package-description").innerHTML;
+        let pkgPrice = document.getElementById("package-price").innerHTML;
+        let pkgNameInput = document.getElementById("package-input");
+        let pkgPriceInput = document.getElementById("price-input");
+        let pkgTransactionInput = document.getElementById("transaction-input");
+
         paypal.Buttons({
             style: {
                 color: 'blue',
@@ -109,24 +134,40 @@ $lista=$_SESSION['lista'];
                 return actions.order.create({
                     purchase_units: [{
                         amount: {
-                            value:  '<?php echo $monto; ?>'
+                            value: '<?php echo $monto?>'
                         }
                     }]
                 });
             },
 
             onApprove: function(data, actions) {
-                return actions.order.capture().then(function (detalles) {
-                    console.log(detalles);
-                    alert("Pago realizado");
+                return actions.order.capture().then(function(detalles) {
+
+                    let data = JSON.stringify(detalles)
+                    pkgNameInput.value = pkgName;
+                    pkgPriceInput.value = pkgPrice;
+                    pkgTransactionInput.value = data;
+                    form.submit()
+
+                    //alert("Pago realizado");
+                    Swal.fire({
+                        title: 'Pago realizado',
+                        text: 'Su pago ha sido procesado con éxito.',
+                        icon: 'success',
+                        timer: 4000, 
+                        showConfirmButton: false // Esto oculta el botón "OK"
+                    });
                 });
             },
-            onCancel: function(data) {
-                alert("Pago cancelado");
-                console.log(data);
+            onCancel: function(detalles) {
+                //alert("Pago cancelado");
+                console.log(detalles);
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Su pago ha sido cancelado!',
+                })
             }
         }).render('#paypal-button-container');
     </script>
-</div>
 </body>
 </html>

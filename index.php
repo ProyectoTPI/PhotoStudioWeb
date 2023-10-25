@@ -19,18 +19,18 @@
         <header>
             <h1>Royale Photo Studio</h1>
             <ul>
-                <li><a href="#">INICIAR SESIÓN</a></li>
-                <li><a href="#" class="active">Inicio</a></li>
-                <li><a href="#">Contacto</a></li>
+                <li><a href="src/views/login.php">INICIAR SESIÓN</a></li>
+                <li><a href="index.php" class="active">Inicio</a></li>
+
                 <li><a href="./src/controllers/CarritoController.php?op=1">Carrito</a></li>
             </ul>
         </header>
 
         <div id="sidebar">
             <ul>
-                <li><a href="#" class="active">Sesiones</a></li>
-                <li><a href="#">Paquetes</a></li>
-                <li><a href="#">Sobre Nosotros</a></li>
+                <li><a href="#" class="active" data-content="photo-container">Mejores Sesiones</a></li>
+                <li><a href="#" data-content="package-container">Paquetes</a></li>
+                <li><a href="#" data-content="about-container">Sobre Nosotros</a></li>
             </ul>
         </div>
 
@@ -94,7 +94,25 @@
                 </div>
             </div>
             <div id="about-container">
-                <h1>Señor xD</h1>
+                <h2>Sobre Nosotros</h2>
+                <p>En Royale Photo Studio, estamos comprometidos a capturar los momentos más especiales de tu vida y convertirlos en recuerdos que atesorarás para siempre. Nuestro equipo de fotógrafos profesionales está dedicado a brindarte la mejor experiencia y a capturar la esencia de cada momento.</p>
+                <p>Con más de 10 años de experiencia, hemos trabajado con innumerables clientes para crear imágenes asombrosas que cuentan historias. Ya sea una sesión de fotos en familia, una sesión de retratos individuales o una sesión en la playa, estamos listos para ayudarte a crear recuerdos duraderos.</p>
+
+                <!-- Agregamos una imagen de un fotógrafo en acción -->
+                <img src="src/views/img/photographer.jpg" alt="Fotógrafo en acción">
+
+                <h3>Nuestra Pasión</h3>
+                <p>La fotografía es nuestra pasión y creemos que cada foto cuenta una historia única. Nos esforzamos por capturar la esencia y la emoción en cada imagen que tomamos. Cada disparo es una oportunidad para crear recuerdos perdurables.</p>
+
+                <h3>Lo Que Ofrecemos</h3>
+                <p>En Royale Photo Studio, ofrecemos una variedad de servicios de fotografía para satisfacer tus necesidades. Ya sea que estés buscando un retrato familiar, una sesión de embarazo o un retrato profesional, estamos aquí para ayudarte a crear imágenes asombrosas.</p>
+
+                <!-- Agregamos una galería de ejemplos de trabajo -->
+                <div class="gallery">
+                    <img src="src/views/img/gallery1.jpg" alt="Ejemplo de trabajo 1">
+                    <img src="src/views/img/gallery2.jpg" alt="Ejemplo de trabajo 2">
+                    <img src="src/views/img/gallery3.jpg" alt="Ejemplo de trabajo 3">
+                </div>
             </div>
         </div>
     </div>

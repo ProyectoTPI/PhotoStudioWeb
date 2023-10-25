@@ -286,13 +286,13 @@ header{
 }
 
 #photo-container .column{
-    flex: 50%;
-    max-width: 50%;
+    flex: 25%;
+    max-width: 25%;
     padding: 0 4px;
 }
 
 #photo-container .column .photo{
-    margin-top: 10;
+    margin-top: 8px;
     vertical-align: middle;
 }
 
@@ -309,21 +309,21 @@ header{
 }
 
 @media only screen and (min-width: 600px){
-    .column{
+    #photo-container .column{
         flex: 50%;
         max-width: 100%;
     }
 }
 
 @media only screen and (min-width: 768px){
-    .column{
+    #photo-container .column{
         flex: 33.33%;
-        max-width: 50%;
+        max-width: 100%;
     }
 }
 
 @media only screen and (min-width: 992px){
-    .column{
+    #photo-container .column{
         flex: 25%;
         max-width: 100%;
     }
@@ -586,3 +586,91 @@ header ul li a:hover, header ul li a.active{
     
 }
 
+/**************************ABOUT US STYLES**************************/
+#about-container {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#about-container h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#about-container p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+#about-container img {
+    max-width: 300px;
+    max-height: 200px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+#about-container h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-top: 20px;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.gallery img {
+    max-width: 300px;
+    max-height: 200px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+    #about-container {
+        padding: 20px;
+    }
+
+    #about-container h2 {
+        font-size: 24px;
+    }
+
+    #about-container p {
+        font-size: 14px;
+    }
+
+    .gallery img {
+        max-width: 100%;
+        max-height: 150px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #about-container {
+        padding: 40px;
+    }
+
+    #about-container h2 {
+        font-size: 32px;
+    }
+
+    #about-container p {
+        font-size: 18px;
+    }
+
+    .gallery img {
+        max-width: 300px;
+        max-height: 200px;
+    }
+}
