@@ -96,7 +96,7 @@
   </div><!--End container-->
 
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src="js/SweetAlert.js"></script>
+  <script src="../../public\js/SweetAlert.js"></script>
 </body>
 
 </html>
