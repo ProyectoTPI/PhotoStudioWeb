@@ -28,7 +28,7 @@
 
         <div id="sidebar">
             <ul>
-                <li><a href="#" class="active" data-content="photo-container">Sesiones</a></li>
+                <li><a href="#" class="active" data-content="photo-container">Mejores Sesiones</a></li>
                 <li><a href="#" data-content="package-container">Paquetes</a></li>
                 <li><a href="#" data-content="about-container">Sobre Nosotros</a></li>
             </ul>

@@ -2,7 +2,7 @@ const photoContainer = document.getElementById("photo-container");
 
 let content = "<div class='column'>";
 
-for(let i = 0; i < 10; i++){
+for(let i = 0; i < 20; i++){
     if(i != 0 && (i % 5 == 0)){
         content += "</div><div class='column'>"+ getPhotoElement(i + 1);
     }

@@ -286,13 +286,13 @@ header{
 }
 
 #photo-container .column{
-    flex: 50%;
-    max-width: 50%;
+    flex: 25%;
+    max-width: 25%;
     padding: 0 4px;
 }
 
 #photo-container .column .photo{
-    margin-top: 10;
+    margin-top: 8px;
     vertical-align: middle;
 }
 
@@ -309,21 +309,21 @@ header{
 }
 
 @media only screen and (min-width: 600px){
-    .column{
+    #photo-container .column{
         flex: 50%;
         max-width: 100%;
     }
 }
 
 @media only screen and (min-width: 768px){
-    .column{
+    #photo-container .column{
         flex: 33.33%;
-        max-width: 50%;
+        max-width: 100%;
     }
 }
 
 @media only screen and (min-width: 992px){
-    .column{
+    #photo-container .column{
         flex: 25%;
         max-width: 100%;
     }
