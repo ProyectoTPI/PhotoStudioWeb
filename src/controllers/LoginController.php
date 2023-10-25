@@ -1,48 +1,38 @@
 <?php
 session_start();
 require_once("../models/UserModel.php");
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-</head>
-
-<body>
-
-		<?php
 
 
-        if (isset($_POST["login"])) {
-            $user = $_POST["username"];
-            $password = $_POST["password"];
 
-            $user_model = new UserModel();
-            $re = $user_model->login($user);
+if (isset($_POST['username']) && isset($_POST['password'])) {
+    $user = $_POST["username"];
+    $password = $_POST["password"];
 
-            if (!$re) {
-                echo "User not found";
-            } elseif (password_verify($password, $re["contrasenia"])) {
+    $user_model = new UserModel();
+    $re = $user_model->login($user);
 
-                $_SESSION["user"] = $user;
-                $_SESSION["password"] = $password;
-                $_SESSION["user_id"] = $re["usuario_id"];
+    if (!$re) {
+        $_SESSION["user_not_found"] = "Usuario no encontrado";
+        header("Location: ../views/login.php");
+        exit();        
+    } elseif (password_verify($password, $re["contrasenia"])) {
+
+        $_SESSION["user"] = $user;
+        $_SESSION["password"] = $password;
+        $_SESSION["user_id"] = $re["usuario_id"];
 
 
-                header("Location: ../../index.php");
-            } else {
-                echo "User wrong";
-            }
-        } elseif (!empty($_POST["login"])) {
-            echo "Someting went wrong";
-        }
+        header("Location: ../../index.php");
+    } else {
+        $_SESSION["user_wrong"] = "Credenciales incorrectas";
+        header("Location: ../views/login.php");
+        exit();
+    }
+
+
+} elseif (!empty($_POST["login"])) {
+    echo "Someting went wrong";
+}
+
 
 ?>
-</body>
-
-
-</html>
