@@ -1,6 +1,6 @@
-<?php 
-    session_start();
-  ?>
+<?php
+session_start();
+?>
 
 <!doctype html>
 <html lang="en">
@@ -62,13 +62,13 @@
                     <ul>
 
                       <?php
-                      if (isset($_SESSION['user_not_found'])) {
+                    if (isset($_SESSION['user_not_found'])) {
                         echo '<li>' . $_SESSION['user_not_found'] . '</li>';
-                      }
-                      if (isset($_SESSION['user_wrong'])) {
+                    }
+                    if (isset($_SESSION['user_wrong'])) {
                         echo '<li>' . $_SESSION['user_wrong'] . '</li>';
-                      }
-                      ?>
+                    }
+                    ?>
                     </ul>
 
 
@@ -103,9 +103,9 @@
 
 <?php
 if (isset($_SESSION['user_not_found'])) {
-  unset($_SESSION['user_not_found']);
+    unset($_SESSION['user_not_found']);
 }
 if (isset($_SESSION['user_wrong'])) {
-  unset($_SESSION['user_wrong']);
+    unset($_SESSION['user_wrong']);
 }
 ?>
