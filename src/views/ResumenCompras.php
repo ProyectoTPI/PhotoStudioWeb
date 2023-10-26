@@ -24,6 +24,7 @@ $lista=$_SESSION['lista'];
             <ul>
                 <li><a href="../../index.php" >Inicio</a></li>
                 <li><a href="./src/controllers/carritoController.php?op=1" class="active">Carrito(0) </a></li>
+                <li><a href="AppointmentRegistration.php" >Registrar Cita </a></li>
                 
             </ul>
         </header>
