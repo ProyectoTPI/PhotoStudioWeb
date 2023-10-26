@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 require_once("../models/UserModel.php");
 
@@ -14,7 +15,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     if (!$re) {
         $_SESSION["user_not_found"] = "Usuario no encontrado";
         header("Location: ../views/login.php");
-        exit();        
+        exit();
     } elseif (password_verify($password, $re["contrasenia"])) {
 
         $_SESSION["user"] = $user;
@@ -31,6 +32,3 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 } elseif (!empty($_POST["login"])) {
     echo "Someting went wrong";
 }
-
-
-?>
