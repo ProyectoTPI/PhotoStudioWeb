@@ -109,8 +109,8 @@ $lista=$_SESSION['lista'];
         <input type="hidden" name="transaction" id="transaction-input" value="">
     </form>
 
-    <a href="./src/views/AppointmentRegistration.php">a</a>
-    <a href="./src/views/RegisterUser.php">regis</a>
+    <a href="AppointmentRegistration.php">a</a>
+    <a href="RegisterUser.php">regis</a>
 
     <script src="https://www.paypal.com/sdk/js?client-id=AekIt_oBmEwI3_VpKUkZj1InGlqq8cWuGdRrfynoSqHCN_cO4G2zFoau4b_nyYpAkIVXFFlwvDTQ6rTX&currency=USD"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

@@ -134,7 +134,7 @@
 
 
           <div class="d-flex justify-content-center form-margint">
-            <p>¿Usted tiene una cuenta? <a href="login.php">Iniciar sesión</a></p>
+            <p>¿Desea regresar al resumen de compras? <a href="ResumenCompras.php">Volver</a></p>
           </div>
 
         </form>

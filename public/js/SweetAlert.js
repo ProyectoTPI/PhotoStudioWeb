@@ -10,7 +10,11 @@ boton_submit.addEventListener("click", function (e) {
             title: 'Error!',
             text: 'Usuario y contraseña no deben estar vacios',
             icon: 'error',
-            confirmButtonText: 'Cool'
+            confirmButtonText: 'Intente de nuevo',
+            confirmButtonColor: "#2363ec",
+            timer:"7000",
+            timerProgressBar: true                   
+
         });
         return;
         }
