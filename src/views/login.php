@@ -6,7 +6,7 @@
 <html lang="en">
 
 <head>
-  <title>Login</title>
+  <title>Iniciar Sesión</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -32,10 +32,10 @@
             <div class="card-body">
 
               <div class="d-flex  justify-content-center">
-                <h1 class="title form-margint">PhotoStudio</h1>
+                <h1 class="title form-margint">Royale Photo Studio</h1>
               </div>
               <div class="d-flex justify-content-center">
-                <p class="eslogan">¡Bienvenido a "la experiencia" con PhotoStudio!</p>
+                <p class="eslogan">¡Bienvenido a la experiencia con Royale Photo Studio!</p>
               </div>
 
 
@@ -78,12 +78,12 @@
 
                 <div class="row d-flex justify-content-center form-margint">
                   <div class="col-lg-3">
-                    <input class="btn btn-lg btn-primary" type="submit" name="login" id="login" value="Iniciar Sesión">
+                    <input class="btn btn-lg" type="submit" name="login" id="login" value="Iniciar Sesión">
                   </div>
                 </div>
 
                 <div class=" d-flex justify-content-center form-margint">
-                  <p>¿No estas registrado? <a href="RegisterUser.php">Registrate</a></p>
+                  <p>¿No estas registrado? <a class="signUp" href="RegisterUser.php">Registrate</a></p>
                 </div>
 
               </form>
