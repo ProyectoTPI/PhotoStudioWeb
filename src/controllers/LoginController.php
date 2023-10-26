@@ -1,26 +1,35 @@
 <?php
 require_once("../models/UserModel.php");
-session_start();
 
-if (isset($_POST['login'])) {
-    $user = $_POST['username'];
-    $password = $_POST['password'];
+
+
+if (isset($_POST['username']) && isset($_POST['password'])) {
+    $user = $_POST["username"];
+    $password = $_POST["password"];
 
     $user_model = new UserModel();
-    $re = $user_model->login($user, $password);
+    $re = $user_model->login($user);
 
-    if ($re) {
+    if (!$re) {
+        $_SESSION["user_not_found"] = "Usuario no encontrado";
+        header("Location: ../views/login.php");
+        exit();        
+    } elseif (password_verify($password, $re["contrasenia"])) {
 
-        if ($_SESSION['rol'] === 'empleado') {
-            header('Location: ../views/home.php');
-            exit;
-        } elseif ($_SESSION['rol'] === 'cliente') {
-            header('Location: layout.php'); 
-            exit;
-        }
+        $_SESSION["user"] = $user;
+        $_SESSION["password"] = $password;
+        $_SESSION["user_id"] = $re["usuario_id"];
+        header("Location: ../../index.php");
     } else {
-        // Autenticación fallida
-        echo "Credenciales incorrectas";
+        $_SESSION["user_wrong"] = "Credenciales incorrectas";
+        header("Location: ../views/login.php");
+        exit();
     }
+
+
+} elseif (!empty($_POST["login"])) {
+    echo "Someting went wrong";
 }
 
+
+?>

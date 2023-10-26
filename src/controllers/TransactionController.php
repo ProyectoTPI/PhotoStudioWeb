@@ -5,7 +5,6 @@ require_once("../models/TransactionModel.php");
 
 $db = new Connection();
 $conn = $db->getConnection();
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $user = $_SESSION["user_id"];
@@ -43,6 +42,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     echo "Successful. ¡Registro almacenado!";
-    header("Location: ../../index.php");
+    header("Location: ../views/ResumenCompras.php");
 
 }
