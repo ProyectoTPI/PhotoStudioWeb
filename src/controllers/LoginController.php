@@ -20,8 +20,6 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         $_SESSION["user"] = $user;
         $_SESSION["password"] = $password;
         $_SESSION["user_id"] = $re["usuario_id"];
-
-
         header("Location: ../../index.php");
     } else {
         $_SESSION["user_wrong"] = "Credenciales incorrectas";

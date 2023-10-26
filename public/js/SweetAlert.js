@@ -11,7 +11,7 @@ boton_submit.addEventListener("click", function (e) {
             text: 'Usuario y contraseña no deben estar vacios',
             icon: 'error',
             confirmButtonText: 'Intente de nuevo',
-            confirmButtonColor: "#2363ec",
+            confirmButtonColor: "#f44336",
             timer:"7000",
             timerProgressBar: true                   
 

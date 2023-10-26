@@ -75,7 +75,7 @@
 
         <div class="m-lg-3">
           <div class="form-margint d-flex justify-content-center">
-            <button type="submit" class="btn btn-lg" id="login">Registrarte</button>
+            <button type="submit" class="btn btn-lg px-5" id="registerUser">Registrate</button>
           </div>
         </div>  
          

@@ -129,12 +129,12 @@
 
 
           <div class="mt-4 d-flex justify-content-center">
-            <button type="submit" class="btn btn-lg btn-primary px-5">Registrar Cita</button>
+            <button type="submit" class="btn btn-lg px-5" id="AppointmentR">Registrar Cita</button>
           </div>
 
 
           <div class="d-flex justify-content-center form-margint">
-            <p>¿Desea regresar al resumen de compras? <a href="ResumenCompras.php">Volver</a></p>
+            <p>¿Desea regresar al resumen de compras? <a class="signUp" href="ResumenCompras.php">Volver</a></p>
           </div>
 
         </form>

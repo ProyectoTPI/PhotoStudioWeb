@@ -54,11 +54,8 @@
     margin: 20px 50px 40px 50px;
    }
 
-#login{
-    margin-top: 20px;
-    margin-bottom: 20px;
-
-    height: 50px;
+#login, #registerUser, #AppointmentR{
+     
     border-radius: 10px;
     background-color: #f44336;
     color: white;
@@ -67,10 +64,10 @@
     cursor: pointer;
 }
 
-#login:hover{
+#login:hover, #registerUser:hover, #AppointmentR:hover{
     background-color: #a51f16;
     color: white;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+    
 }
 
 .signUp{

@@ -23,7 +23,6 @@ $lista=$_SESSION['lista'];
             <h1>Royale Photo Studio</h1>
             <ul>
                 <li><a href="../../index.php" >Inicio</a></li>
-                <li><a href="#">Contacto</a></li>
                 <li><a href="./src/controllers/carritoController.php?op=1" class="active">Carrito(0) </a></li>
                 
             </ul>

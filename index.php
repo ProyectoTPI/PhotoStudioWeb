@@ -44,7 +44,7 @@
                     <div class="package-info">
                         <h2>Paquete Embarazo</h2>
                         <p id="package-description">Captura las emociones de este momento único e irrepetible que te permitira volverlas a revivir en un futuro junto a tu familia</p>
-                        <p id="package-price">1</p>
+                        <p id="package-price">50</p>
                         <button>Añadir al carrito</button>
                     </div>
                 </div>
