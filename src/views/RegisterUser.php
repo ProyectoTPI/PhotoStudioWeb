@@ -14,10 +14,10 @@
     <div class="card">
       <div class="card-body m-3">
         <div class="m-2 d-flex justify-content-center ">
-          <h1 class="title">PhotoStudio</h1>
+          <h1 class="title">Royale Photo Studio</h1>
         </div>
         <div class="m-2 d-flex justify-content-center">
-          <p class="eslogan">¡Resgistrate para vivir "la experiencia" con PhotoStudio!</p>
+          <p class="eslogan">¡Resgistrate para vivir la experiencia con Royale Photo Studio!</p>
         </div>
         <form action="/src/controllers/RegController.php" method="post">
 
@@ -75,13 +75,13 @@
 
         <div class="m-lg-3">
           <div class="form-margint d-flex justify-content-center">
-            <button type="submit" class="btn btn-lg btn-primary px-5">Registrarte</button>
+            <button type="submit" class="btn btn-lg px-5" id="registerUser">Registrate</button>
           </div>
         </div>  
          
 
           <div class="d-flex justify-content-center form-margint">
-            <p>¿Usted tiene una cuenta? <a href="login.php">Iniciar sesión</a></p>
+            <p>¿Usted tiene una cuenta? <a href="login.php" class="signUp">Iniciar sesión</a></p>
           </div>
         </form>
       </div>

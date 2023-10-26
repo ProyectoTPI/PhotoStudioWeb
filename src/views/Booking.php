@@ -31,15 +31,15 @@
             locale: 'es',
             initialView: 'dayGridMonth',
             events: [{
-                    title: 'Evento 1',
+                    title: 'Bautizo - Santa Tecla',
                     start: '2023-10-15'
                 },
                 {
-                    title: 'Evento 2',
+                    title: 'Fiesta 15 años',
                     start: '2023-10-20'
                 },
                 {
-                    title: 'tEST',
+                    title: 'Boda Merino',
                     start: '2023-10-22'
                 }
             ]

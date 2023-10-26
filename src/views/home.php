@@ -45,7 +45,7 @@ if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== 'empleado') {
             <li><a href="employeeMaintenance.php"><i class="fa fa-user"></i>Empleados</a></li>
             <li><a href="directory.php"><i class="fa fa-address-book-o"></i>Directorio telefónico</a></li>
             <li><a href="dashboardAdmin.php"><i class="fa fa-bar-chart"></i>Dashboard</a></li>
-            <li><a href="#"><i class="fa fa-info-circle"></i>Sobre nosotros</a></li>
+
         </ul>
     </section>
 

@@ -1,8 +1,12 @@
+<?php 
+    session_start();
+  ?>
+
 <!doctype html>
 <html lang="en">
 
 <head>
-  <title>Login</title>
+  <title>Iniciar Sesión</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -19,48 +23,71 @@
     <main class="container-custom">
       <div class="card mb-3">
         <div class="row g-0">
-          
+
           <div class="col-md-4 not-img">
-            <img src="img/PhotoStudio0000.jpg" class="img-fluid rounded-start" alt="Un camarografo">
+            <img src="img/PhotoStudio0000.jpg" class="img-fluid rounded-start h-100" alt="Un camarografo">
           </div>
-          
+
           <div class="col-md-8 form100">
             <div class="card-body">
-              
+
               <div class="d-flex  justify-content-center">
-                  <h1 class="title form-margint">PhotoStudio</h1>
+                <h1 class="title form-margint">Royale Photo Studio</h1>
               </div>
               <div class="d-flex justify-content-center">
-                  <p class="eslogan">¡Bienvenido a "la experiencia" con PhotoStudio!</p>
+                <p class="eslogan">¡Bienvenido a la experiencia con Royale Photo Studio!</p>
               </div>
-              
-           
-              <form class="form-margin" method="post" action="./../controllers/LoginController.php">
-                                
-                  <div class="form-group row col-form-label label-size">
-                        <label for="username" class="col-xl-2 ">Nombre de usuario</label>
-                        <div class="col-sm-10 width-col">
-                          <input type="text" class="form-control" id="username" name="username" placeholder="Ingrese su nombre de usuario, ejemplo: Natanael" required>
-                        </div>
+
+
+              <form id="form-login" class="form-margin" method="post" action="./../controllers/LoginController.php">
+
+                <div class="form-group row col-form-label label-size">
+                  <label for="username" class="col-xl-2 ">Nombre de usuario</label>
+                  <div class="col-sm-10 width-col">
+                    <input type="text" class="form-control" id="username" name="username"
+                      placeholder="Ingrese su nombre de usuario, ejemplo: Natanael">
                   </div>
-                  <div class="form-group row col-form-label label-size">
-                        <label for="password" class="col-xl-2">Contraseña</label>
-                        <div class="col-sm-10 width-col">
-                          <input type="password" class="form-control" id="password" name="password" placeholder="Ingrese su contraseña, ejem: 1234" required>
-                        </div>
+                </div>
+                <div class="form-group row col-form-label label-size">
+                  <label for="password" class="col-xl-2">Contraseña</label>
+                  <div class="col-sm-10 width-col">
+                    <input type="password" class="form-control" id="password" name="password"
+                      placeholder="Ingrese su contraseña, ejem: 1234">
                   </div>
-                  <div class="row d-flex justify-content-center form-margint">
-                        <div class="col-lg-3">
-                          <input class="btn btn-lg btn-primary" type="submit" name="login" value="Login">
-                        </div>
+                </div>
+
+                <?php if (isset($_SESSION['user_not_found']) || isset($_SESSION['user_wrong'])): ?>
+
+                  <div class="alert alert-danger mt-3" role="alert">
+                    <ul>
+
+                      <?php
+                      if (isset($_SESSION['user_not_found'])) {
+                        echo '<li>' . $_SESSION['user_not_found'] . '</li>';
+                      }
+                      if (isset($_SESSION['user_wrong'])) {
+                        echo '<li>' . $_SESSION['user_wrong'] . '</li>';
+                      }
+                      ?>
+                    </ul>
+
+
                   </div>
 
-                  <div class=" d-flex justify-content-center form-margint">
-                        <p>¿No estas registrado? <a href="RegisterUser.php">Registrate</a></p>
+                <?php endif; ?>
+
+                <div class="row d-flex justify-content-center form-margint">
+                  <div class="col-lg-3">
+                    <input class="btn btn-lg" type="submit" name="login" id="login" value="Iniciar Sesión">
                   </div>
-         
+                </div>
+
+                <div class=" d-flex justify-content-center form-margint">
+                  <p>¿No estas registrado? <a class="signUp" href="RegisterUser.php">Registrate</a></p>
+                </div>
+
               </form>
-              
+
             </div> <!--End card-body-->
           </div><!--End col-md-8-->
         </div><!--End row-->
@@ -68,15 +95,17 @@
     </main>
   </div><!--End container-->
 
-
-  <!-- Bootstrap JavaScript Libraries -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-    </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
-    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
-    </script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="../../public\js/SweetAlert.js"></script>
 </body>
 
 </html>
+
+<?php
+if (isset($_SESSION['user_not_found'])) {
+  unset($_SESSION['user_not_found']);
+}
+if (isset($_SESSION['user_wrong'])) {
+  unset($_SESSION['user_wrong']);
+}
+?>
