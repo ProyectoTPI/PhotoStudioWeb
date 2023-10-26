@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 session_start();
-$lista=$_SESSION['lista'];
+$lista = $_SESSION['lista'];
 ?>
 
 <html lang="en">
@@ -44,36 +44,36 @@ $lista=$_SESSION['lista'];
         </tr>
         
            <?php
-      $num=0;
-      $monto=0;
-         foreach($lista as $reg){
-          $num++;
-          $monto=$reg['precio']+$monto;
-         
-          //Tnemos la imagen para los 5 paquetes si el paquete es nuevo aparece una imagen predeterminada
-    switch($reg['nombre_comercial']){
-        case 'SESION FAMILIAR':
-            $foto="../../src/views/img/family_photo.jpg";
-            break;
-            case 'SESION INDIVIDUAL':
-                $foto= "../../src/views/img/individual_photo.jpg";
-                break;
-                case 'SESION EMBARAZO':
-                    $foto= "../../src/views/img/pregnant_photo.jpg";
-                    break;
-                    case "SESION PLAYA":
-                       $foto= "../../src/views/img/beach_photo.jpg";
-                       break;
-                       case "SESION PROFESIONAL":
-                        $foto= "../../src/views/img/professional_photo.jpg";
-                        break;
-                        default:
-                        $foto= "../../src/views/img/default.jpg";
-                        break;
+      $num = 0;
+$monto = 0;
+foreach($lista as $reg) {
+    $num++;
+    $monto = $reg['precio'] + $monto;
 
-                       }
-                       
-          ?>
+    //Tnemos la imagen para los 5 paquetes si el paquete es nuevo aparece una imagen predeterminada
+    switch($reg['nombre_comercial']) {
+        case 'SESION FAMILIAR':
+            $foto = "../../src/views/img/family_photo.jpg";
+            break;
+        case 'SESION INDIVIDUAL':
+            $foto = "../../src/views/img/individual_photo.jpg";
+            break;
+        case 'SESION EMBARAZO':
+            $foto = "../../src/views/img/pregnant_photo.jpg";
+            break;
+        case "SESION PLAYA":
+            $foto = "../../src/views/img/beach_photo.jpg";
+            break;
+        case "SESION PROFESIONAL":
+            $foto = "../../src/views/img/professional_photo.jpg";
+            break;
+        default:
+            $foto = "../../src/views/img/default.jpg";
+            break;
+
+    }
+
+    ?>
           
          <tr>
            <td class="ite"><?php echo $num ?></td>
@@ -87,13 +87,13 @@ $lista=$_SESSION['lista'];
             </form>
          </tr>
        <?php
-         }
-       ?>
+}
+?>
         
     </table>
     <div class="inline">
     <h1 class="monto">Total a pagar </h1>
-    <h1 class="monto"> <?php  echo '$ '. number_format($monto,2) ?></h1>
+    <h1 class="monto"> <?php  echo '$ '. number_format($monto, 2) ?></h1>
     </div>
     <div  class="pay" id="paypal-button-container"></div>
     <p id="result-message"></p> 
