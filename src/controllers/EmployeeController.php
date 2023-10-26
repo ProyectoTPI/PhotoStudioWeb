@@ -25,7 +25,6 @@ if (isset($_POST['empleado_id'])) {
         $usernameEdit = $_POST['usernameEdit'];
         $duiEdit = $_POST['duiEdit'];
         $numberphoneEdit = $_POST['numberphoneEdit'];
-        $numberphoneEdit = $_POST['numberphoneEdit'];
         $emailEdit = $_POST['emailEdit'];
         $passwordEdit = $_POST['passwordEdit'];
 

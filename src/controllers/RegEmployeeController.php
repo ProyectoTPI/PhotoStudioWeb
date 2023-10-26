@@ -1,6 +1,6 @@
 <?php
 include '../config/Connection.php';
-include '../models/RegModel.php';
+include '../models/RegEmployeeModel.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_POST['name'];
@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
     $numberphone = $_POST['numberphone'];
 
-    $rol = 'cliente';
+    $rol = 'empleado';
 
     if (empty($name) || empty($lastname) || empty($username) || empty($password) || empty($dui) || empty($email) || empty($numberphone)) {
         echo "Error en los datos ingresados. Hay campos obligatorios.";
@@ -23,12 +23,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $db = new Connection();
     $conn = $db->getConnection();
 
-    $clientModel = new RegModel($conn);
+    $employeeModel = new RegEmployeeModel($conn);
 
-    if ($clientModel->createClient($username, $hashedPassword, $name, $dui, $lastname, $numberphone, $email, $rol)) {
-        echo "Cliente registrado exitosamente.";
+    if ($employeeModel->createEmployee($username, $hashedPassword, $name, $dui, $lastname, $numberphone, $email, $rol)) {
+        echo "Empleado registrado exitosamente.";
     } else {
-        echo "Error en el registro del cliente. Inténtalo de nuevo.";
+        echo "Error en el registro del empleado. Inténtalo de nuevo.";
     }
 }
 ?>

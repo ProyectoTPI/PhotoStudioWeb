@@ -1,0 +1,152 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+.titulo {
+    font-size: 40px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: small;
+}
+
+.sidebar {
+    position: fixed;
+    left: 0px;
+    width: 300px;
+    height: 100%;
+    background: #434444;
+    transition: all 0.5s ease;
+}
+
+.sidebar>header {
+    font-size: 22px;
+    color: white;
+    text-align: center;
+    line-height: 150px;
+    background: #000000;
+    user-select: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.sidebar ul a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 65px;
+    font-size: 20px;
+    color: white;
+    padding-left: 40px;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid black;
+    transition: 0.1s;
+    z-index: 1;
+}
+
+ul li:hover a {
+    padding-left: 50px;
+}
+
+.sidebar ul a i {
+    margin-right: 8px;
+}
+
+.logo {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    margin-left: 40px;
+}
+
+.logo img {
+    border-radius: 50%;
+    width: 90%;
+    height: 90%;
+}
+
+.container {
+    background: url("../IMG/fondoHome.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    transition: all .5s;
+}
+
+#toggleSidebarButton {
+    display: none;
+    margin-left: 500px;
+}
+
+.labelBotonMenu #btnMostrar {
+    left: 800;
+    top: 0;
+    font-size: 35px;
+    color: white;
+    padding: 4px 10px;
+    transition: all 0.5s;
+    position: fixed;
+    cursor: pointer;
+    background: #000000;
+    border-radius: 3px;
+    z-index: 1;
+    margin-left: 20px;
+}
+
+#divTitle {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  #avatarContainer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-grow: 1; 
+  }
+  
+  #avatarContainer img {
+    max-width: 100px;
+    max-height: 100px;
+  }
+
+.divCard{
+    padding-top: 20px;
+    height: 1400px;
+    width: 400%;
+ 
+}
+
+.divBooking {
+    padding: 0; 
+    margin: 0;
+
+}
+
+h5{
+    color:blue;
+}
+
+.calendario {
+    background-color: #cccccce1;
+    height: 600px;
+    width: 200%; 
+}
+

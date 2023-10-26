@@ -1,7 +1,4 @@
 <?php
-$db = new Connection();
-$conn = $db->getConnection();
-
 class RegModel
 {
     private $connection;
@@ -11,16 +8,17 @@ class RegModel
         $this->connection = $db;
     }
 
-    public function createUser($username, $password, $name, $dui, $lastname, $numberphone, $email)
+    public function createClient($username, $password, $name, $dui, $lastname, $numberphone, $email, $rol)
     {
         if ($this->connection === null) {
             return false; 
         }
 
-        $userInsertSQL = "INSERT INTO usuarios (usuario, contrasenia, fecha_creacion) VALUES (:username, :password, NOW())";
+        $userInsertSQL = "INSERT INTO usuarios (usuario, contrasenia, fecha_creacion, rol) VALUES (:username, :password, NOW(), :rol)";
         $stmtUser = $this->connection->prepare($userInsertSQL);
         $stmtUser->bindParam(':username', $username, PDO::PARAM_STR);
         $stmtUser->bindParam(':password', $password, PDO::PARAM_STR);
+        $stmtUser->bindParam(':rol', $rol, PDO::PARAM_STR);
 
         if ($stmtUser->execute()) {
             $userId = $this->connection->lastInsertId();
@@ -44,6 +42,4 @@ class RegModel
         }
     }
 }
-
-
 ?>

@@ -1,0 +1,5 @@
+.chart-container {
+    width: 35%; /* Tamaño deseado para los gráficos */
+    display: inline-block;
+}
+
