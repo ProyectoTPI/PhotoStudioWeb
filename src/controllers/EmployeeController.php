@@ -1,4 +1,5 @@
 <?php
+
 require_once("../models/EmployeeModel.php");
 
 $employeeModel = new EmployeeModel();
@@ -38,5 +39,3 @@ if (isset($_POST['empleado_id'])) {
         }
     }
 }
-
-?>

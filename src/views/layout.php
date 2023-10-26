@@ -4,7 +4,7 @@
 session_start();
 
 if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== 'cliente') {
-    header('Location: pagina_de_error.php'); 
+    header('Location: pagina_de_error.php');
     exit;
 }
 ?>

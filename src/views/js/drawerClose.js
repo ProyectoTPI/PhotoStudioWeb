@@ -1,3 +1,3 @@
-    window.addEventListener('load', function () {
-        toggleSidebar();
-    });
+window.addEventListener("load", function () {
+  toggleSidebar();
+});

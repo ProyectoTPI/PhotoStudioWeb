@@ -17,4 +17,3 @@ if (isset($_GET['employee_id'])) {
     http_response_code(400);
     echo json_encode(array("message" => "ID de empleado no válido"));
 }
-?>

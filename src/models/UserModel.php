@@ -25,11 +25,11 @@ class UserModel extends Connection
 
                 if ($user['rol'] === 'empleado') {
                     $_SESSION['rol'] = 'empleado';
-                    header('Location: /src/views/home.php'); 
+                    header('Location: /src/views/home.php');
                     exit;
                 } elseif ($user['rol'] === 'cliente') {
                     $_SESSION['rol'] = 'cliente';
-                    header('Location: /index.php'); 
+                    header('Location: /index.php');
                     exit;
                 }
             } else {

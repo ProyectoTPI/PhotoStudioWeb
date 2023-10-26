@@ -1,4 +1,5 @@
 <?php
+
 $db = new Connection();
 $conn = $db->getConnection();
 
@@ -45,4 +46,3 @@ class RegEmployeeModel
         }
     }
 }
-?>

@@ -1,4 +1,5 @@
 <?php
+
 include '../config/Connection.php';
 include '../models/RegEmployeeModel.php';
 
@@ -31,4 +32,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "Error en el registro del empleado. Inténtalo de nuevo.";
     }
 }
-?>
